@@ -41,9 +41,7 @@ def get_user_uuid():
     return uid
 
 def is_mobile():
-    user_agent = request.headers.get("User-Agent", "")
-    mobile_agents = ["Mobile", "Android", "iPhone", "iPad", "Windows Phone"]
-    return any(agent in user_agent for agent in mobile_agents)
+    return False
 
 def get_questions(questionnaire_id, step):
     data = json.load(open("questionaire.json"))
