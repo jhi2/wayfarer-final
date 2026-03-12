@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='questionaire.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}">
+<style>
+    .questionaire-box {
+    background-color: rgba(161, 134, 111, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: auto;
+    color: #fff;
+}
+    .form-input {
+    background-color: #a1866f;
+    color: #fff;
+    border-radius: 999px;
+    padding: 12px 18px;
+    border: 2px solid #C1683C;
+    margin-top:20px;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(193, 104, 60, 0.35);
+}
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #C1683C;
+}
+.q-submit {
+    background-color: #C1683C;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.q-submit:hover {
+    background-color: #a85a32;
+    transform: translateY(-1px);
+}
+
+.q-submit:active {
+    transform: translateY(0);
+}
+
+</style>
+{% endblock %}
+{% block main_content %}
+    <h1 class="poptext">Answer a few questions,please.</h1>
+    <h3>(Enter None or 0 if not applicable.)</h3>
+    <div class="container questionaire-box">
+        <h2>Step {{ stage }} of {{ max_stages }}</h2>
+        <form method="post" action="{{ url_for('mainappff', stage=stage, questionnaire_id=questionnaire_id) }}">
+            <div class="question-box">
+                {{ question|safe }} 
+            </div>
+            <div class="navigation">
+                <button type="submit" class="q-submit">Next</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

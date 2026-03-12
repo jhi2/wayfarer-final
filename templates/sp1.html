@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+<style>
+/* Checkboxes and radios accent color */
+.scnt{
+    overflow-y:auto;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #C1683C;
+    width: 20px;
+    height: 20px;
+}
+
+/* Table styling */
+table.mtb {
+    width: 100%;
+    border-collapse: collapse; /* Combine borders nicely */
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Table header */
+table.mtb th {
+    background-color: #C1683C;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #C1683C;
+}
+
+/* Table body cells */
+table.mtb td {
+    padding: 12px;
+    border: 1px solid #C1683C;
+}
+.q-submit {
+    background-color: #C1683C;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.q-submit:hover {
+    background-color: #a85a32;
+    transform: translateY(-1px);
+}
+
+.q-submit:active {
+    transform: translateY(0);
+}
+
+table.mtb td, table.mtb th {
+    padding: 6px 12px; 
+    border: 1px solid #C1683C;
+    line-height: 78%  
+}
+
+
+</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block main_content %}
+
+<h1 class="poptext">Here are your picks:</h1>
+<p>Your picks are general classes of activities you can do on your trip. Check the ones you are interested in.</p>
+<form method="POST" action="{{ url_for('handle_activity_selection') }}">
+  <table class="mtb">
+    <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Interested?</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for activity in activities %}
+      <tr>
+        <td>{{ activity }}</td>
+        <td style="text-align:center;">
+          <input type="checkbox" name="activity_{{ activity }}">
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit" class="q-submit">Next</button>
+</form>
+
+{% endblock %}

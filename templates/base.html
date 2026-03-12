@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan a trip you'll love - Wayfarer</title>
+{% block stylesheet %}
+{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='alwaysneeded.css') }}">
+</head>
+<body>
+    <div style="text-align: center; z-index: 10;">
+        <img src="{{ url_for('static', filename='transparent-logo.svg') }}" alt="Wayfarer Logo" width="150" >
+    </div>
+<video autoplay muted loop id="background-video">
+    <source src="{{ url_for('static', filename='bgv.mp4') }}" type="video/mp4">
+</video>
+
+<div id="main_box">
+    
+    {% block main_content %}
+    {% endblock %}
+   </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<style>
+.thingimabob { text-align:center; }
+</style>
+{% endblock %}
+
+{% block main_content %}
+
+<script>
+const endpoint = "{{ url_for('q2_endpoint') }}"; // AI2 results
+const statusEndpoint = "{{ url_for('isthethreaddone2') }}"; // AI2 status/position
+
+function updateStatus() {
+    fetch(statusEndpoint)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status) {
+                document.getElementById('queue-status').innerText = data.status;
+            }
+        });
+}
+
+function pollQueue() {
+    updateStatus();
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Received:", data);
+            if (Array.isArray(data) && data.length > 0 && typeof data[0] === "string") {
+                const jsonStr = encodeURIComponent(JSON.stringify(data));
+                const redirectUrl = "{{ url_for('pickssuc2') }}?jsonstr=" + jsonStr;
+                window.location.href = redirectUrl;
+                return;
+            }
+            setTimeout(pollQueue, 2000);
+        })
+        .catch(() => setTimeout(pollQueue, 5000));
+}
+
+pollQueue();
+</script>
+
+<h1 class="poptext">You're in line!</h1>
+<p id="queue-status" style="font-weight: bold; color: #ff9900;">
+Checking your position...
+</p>
+<p>
+You're in line to get your full travel itinerary for your trip!
+You will be redirected as soon as possible.
+</p>
+<p>Our agent is working on it now. Thanks for your patience.</p>
+
+<div class="loader thingimabob"></div>
+
+{% endblock %}

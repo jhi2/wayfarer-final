@@ -1,0 +1,30 @@
+ 
+    @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap');
+
+    #main1 {
+        margin: 0 0 10px 0;
+        font-size: 485%;
+        font-family: "Mandali", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 0.9;
+    }
+    .poptext {
+        color: #C1683C;
+        font-size: 510%;
+        margin: 0;
+
+        font-family: "Petit Formal Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 0.9;
+    }
+    #letsgo{
+        background-color:#D9A066;
+        font-size:250%;
+        border-radius:8px;
+        padding:10px 20px;
+        text-decoration:none;
+        color:#F5F0E6;
+    }

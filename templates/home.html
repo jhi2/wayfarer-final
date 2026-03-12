@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block main_content %}
+    
+    <div margin="auto" padding="50px">
+    <h1 id="main1">Plan a trip</h1>
+    <h1 class="poptext">you'll love.</h1>
+    </div>
+    <div><p>Wayfarer is your personal travel planner that crafts an entire trip tailored just for you. Simply answer a few simple questions about your preferences, interests, and travel style, and Wayfarer will generate a complete itinerary — from flights and hotels to activities and hidden gems — all in one seamless plan. Your next adventure starts here."</p></div>
+   <div>
+    <a id="letsgo" href="{{url_for('fredir', qid='destination')}}">Let's go!</a>
+   </div>
+{% endblock %}
+

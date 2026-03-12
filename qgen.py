@@ -1,0 +1,52 @@
+import json
+
+qnar = {
+    "questionnaires": {
+        "destination": {
+            "1": ["Where do you want to go?", "text", "pop"],
+            "2": ["What is your total budget for this trip?", "number"],
+            "3": ["How long is your trip? (In days)", "number"],
+            "4": ["What are you hoping to experience on this trip?", "text"],
+            "5": ["What is your preferred travel season or dates?", "text"],
+            "6": ["Are there any countries or cities you want to avoid?", "text"],
+            "7": ["What city do you wish to depart from?", "text"]
+        },
+        "transport_preferences": {
+            "1": ["What is your preferred mode of transportation?", "multichoice",
+                  ["Plane", "Train", "Car", "Bus"]],
+            "2": ["Do you have any specific airline or transportation company preferences?", "text"],
+            "3": ["Are there any layover or stopover preferences for your flights or trips?", "text"],
+            "4": ["When does your trip start?", "date"],
+            "5": ["WHen does your trip end?", "date"],
+            "6": ["Do you have any specific seating preferences?", "text"],
+            "7": ["Do you prefer direct trips or are multiple transfers acceptable?", "multichoice", ["Direct only", "Multiple transfers acceptable"]],
+            "8": ["How many adults are traveling?", "number"],
+            "9": ["How many children are traveling?", "number"],
+            "10": ["How many infants in seat are traveling?", "number"],
+            "11": ["Do you have any accessibility requirements?", "text"]
+        },
+        "accommodation_preferences": {
+            "1": ["What type of accommodation do you prefer?", "multichoice", ["Hotel", "Airbnb", "Resort", "Hostel"]],
+            "2": ["What is your budget for accommodation per night?", "number"],
+            "3": ["Do you have any specific hotel or accommodation brand preferences?", "text"],
+            "4": ["What is your most perfered amentity in your accommodation?", "multichoice", ["Wi-Fi", "Pool", "Breakfast included", "Gym", "Parking"]],
+            "5": ["Do you prefer a central location or a quieter area?", "multichoice", ["Central", "Quieter", "No preference"]],
+            "6": ["Do you need wheelchair accessibility?", "text"],
+            "7": ["Any other special accommodation requirements?", "text"]
+        },
+        "activities_preferences": {
+            "1": ["Do you want guided tours or self-exploration?", "multichoice", ["Guided", "Self-exploration", "Mix"]],
+            "2": ["Do you have any dietary restrictions, allergies, or preferences that should be considered during activities and meals?", "text"],
+            "3": ["Are there any events, festivals, or seasonal activities you want to attend or avoid?", "text"],
+            "4": ["Do you prefer high-energy activities (sports, adventure) or more relaxed activities (museums, sightseeing, beaches)?", "multichoice", ["High-energy", "Relaxed", "Mix"]],
+            "5": ["Are there any specific attractions or landmarks you want to prioritize visiting?", "text"],
+            "6": ["Would you like recommendations for hidden gems or off-the-beaten-path experiences?", "multichoice", ["Yes", "No"]],
+            "7": ["Do you have any accessibility or mobility considerations for activities?", "text"]
+        }
+    }
+}
+
+with open("questionaire.json", "w") as f:
+    json.dump(qnar, f, indent=4)
+
+print("File Regenerated")

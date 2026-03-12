@@ -1,0 +1,106 @@
+{
+  "destination": {
+    "1": {
+      "id": "destination-where-do-you-want-to-go"
+    },
+    "2": {
+      "id": "destination-what-is-your-total-budget-for-this-trip"
+    },
+    "3": {
+      "id": "destination-how-long-is-your-trip-in-days"
+    },
+    "4": {
+      "id": "destination-what-are-you-hoping-to-experience-on-this-trip"
+    },
+    "5": {
+      "id": "destination-what-is-your-preferred-travel-season-or-dates"
+    },
+    "6": {
+      "id": "destination-are-there-any-countries-or-cities-you-want-to-avoid"
+    },
+    "7": {
+      "id": "destination-what-city-do-you-wish-to-depart-from"
+    }
+  },
+  "transport_preferences": {
+    "1": {
+      "id": "transport_preferences-what-is-your-preferred-mode-of-transportation"
+    },
+    "2": {
+      "id": "transport_preferences-do-you-have-any-specific-airline-or-transportation-company-preferences"
+    },
+    "3": {
+      "id": "transport_preferences-are-there-any-layover-or-stopover-preferences-for-your-flights-or-trips"
+    },
+    "4": {
+      "id": "transport_preferences-when-does-your-trip-start"
+    },
+    "5": {
+      "id": "transport_preferences-when-does-your-trip-end"
+    },
+    "6": {
+      "id": "transport_preferences-do-you-have-any-specific-seating-preferences"
+    },
+    "7": {
+      "id": "transport_preferences-do-you-prefer-direct-trips-or-are-multiple-transfers-acceptable"
+    },
+    "8": {
+      "id": "transport_preferences-how-many-adults-are-traveling"
+    },
+    "9": {
+      "id": "transport_preferences-how-many-children-are-traveling"
+    },
+    "10": {
+      "id": "transport_preferences-how-many-infants-in-seat-are-traveling"
+    },
+    "11": {
+      "id": "transport_preferences-do-you-have-any-accessibility-requirements"
+    }
+  },
+  "accommodation_preferences": {
+    "1": {
+      "id": "accommodation_preferences-what-type-of-accommodation-do-you-prefer"
+    },
+    "2": {
+      "id": "accommodation_preferences-what-is-your-budget-for-accommodation-per-night"
+    },
+    "3": {
+      "id": "accommodation_preferences-do-you-have-any-specific-hotel-or-accommodation-brand-preferences"
+    },
+    "4": {
+      "id": "accommodation_preferences-what-is-your-most-perfered-amentity-in-your-accommodation"
+    },
+    "5": {
+      "id": "accommodation_preferences-do-you-prefer-a-central-location-or-a-quieter-area"
+    },
+    "6": {
+      "id": "accommodation_preferences-do-you-need-wheelchair-accessibility"
+    },
+    "7": {
+      "id": "accommodation_preferences-any-other-special-accommodation-requirements"
+    }
+  },
+  "activities_preferences": {
+    "1": {
+      "id": "activities_preferences-do-you-want-guided-tours-or-self-exploration"
+    },
+    "2": {
+      "id": "activities_preferences-do-you-have-any-dietary-restrictions-allergies-or-preferences-that-should-be-considered-during-activities-and-meals"
+    },
+    "3": {
+      "id": "activities_preferences-are-there-any-events-festivals-or-seasonal-activities-you-want-to-attend-or-avoid"
+    },
+    "4": {
+      "id": "activities_preferences-do-you-prefer-high-energy-activities-sports-adventure-or-more-relaxed-activities-museums-sightseeing-beaches"
+    },
+    "5": {
+      "id": "activities_preferences-are-there-any-specific-attractions-or-landmarks-you-want-to-prioritize-visiting"
+    },
+    "6": {
+      "id": "activities_preferences-would-you-like-recommendations-for-hidden-gems-or-off-the-beaten-path-experiences"
+    },
+    "7": {
+      "id": "activities_preferences-do-you-have-any-accessibility-or-mobility-considerations-for-activities"
+    }
+  }
+}

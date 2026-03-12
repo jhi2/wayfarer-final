@@ -1,0 +1,13 @@
+prettyprint
+smolagents
+flask
+google-search-results
+beautifulsoup4
+requests
+smolagents[litellm]
+ddgs
+uuid
+python-dotenv
+waitress
+litellm
+httpx
