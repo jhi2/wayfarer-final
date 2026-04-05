@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<style>
+    .itinerary-container {
+        background-color: rgba(245, 240, 230, 0.95);
+        border-radius: 12px;
+        padding: 30px;
+        color: #3E2F2F;
+        max-height: 70vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #C1683C #A1866F;
+    }
+    
+    .itinerary-container::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .itinerary-container::-webkit-scrollbar-track {
+        background: #A1866F;
+        border-radius: 4px;
+    }
+    
+    .itinerary-container::-webkit-scrollbar-thumb {
+        background-color: #C1683C;
+        border-radius: 4px;
+    }
+    
+    .itinerary-container h1 {
+        font-family: "Petit Formal Script", cursive;
+        color: #C1683C;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .itinerary-container h2 {
+        font-family: "Mandali", sans-serif;
+        color: #3E2F2F;
+        border-bottom: 2px solid #C1683C;
+        padding-bottom: 8px;
+        margin-top: 25px;
+        font-size: 1.4rem;
+    }
+    
+    .itinerary-container h3 {
+        font-family: "Mandali", sans-serif;
+        color: #A1866F;
+        margin-top: 18px;
+        font-size: 1.1rem;
+    }
+    
+    .itinerary-container p {
+        line-height: 1.7;
+        margin: 10px 0;
+    }
+    
+    .itinerary-container ul, 
+    .itinerary-container ol {
+        line-height: 1.8;
+        padding-left: 25px;
+    }
+    
+    .itinerary-container li {
+        margin: 8px 0;
+    }
+    
+    .itinerary-container strong {
+        color: #C1683C;
+    }
+    
+    .itinerary-container a {
+        color: #C1683C;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+    }
+    
+    .itinerary-container a:hover {
+        border-bottom-color: #C1683C;
+    }
+    
+    .itinerary-container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+    }
+    
+    .itinerary-container th,
+    .itinerary-container td {
+        border: 1px solid #A1866F;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .itinerary-container th {
+        background-color: #C1683C;
+        color: #F5F0E6;
+        font-family: "Mandali", sans-serif;
+    }
+    
+    .itinerary-container tr:nth-child(even) {
+        background-color: rgba(161, 134, 111, 0.1);
+    }
+    
+    .back-home-btn {
+        display: inline-block;
+        background-color: #D9A066;
+        color: #F5F0E6;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-family: "Mandali", sans-serif;
+        font-size: 1.1rem;
+        margin-top: 20px;
+        transition: background-color 0.2s, transform 0.2s;
+    }
+    
+    .back-home-btn:hover {
+        background-color: #C1683C;
+        transform: translateY(-2px);
+    }
+    
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .ai-content {
+        font-size: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block main_content %}
+<div class="itinerary-container">
+    <div class="ai-content">
+        {{ itinerary_html|safe }}
+    </div>
+</div>
+<div class="button-container">
+    <a href="{{ url_for('clear_uuid_cookie') }}" class="back-home-btn">Plan Another Trip</a>
+</div>
+{% endblock %}

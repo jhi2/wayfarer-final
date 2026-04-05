@@ -175,9 +175,8 @@ def ast2p():
 def pickssuc2():
     raw_htm = request.args.get("jsonstr", "")
     clean_htm = raw_htm.replace(r"\n", "").replace(r'"]', "").replace(r'["', "")
-    full_template = '  <style>body{font-family:sans-serif; color:#343231; }</style> <br><a href="{{ url_for(\'clear_uuid_cookie\') }}">Go Back Home</a>' + clean_htm + ' <br><a href="{{ url_for(\'clear_uuid_cookie\') }}">Go Back Home</a>'
     
-    return render_template_string(full_template)
+    return render_template("itinerary_result.html", itinerary_html=clean_htm)
 
 @app.route("/picks/s1n2atstwat/")
 def picksuc2():
